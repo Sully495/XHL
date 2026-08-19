@@ -1,0 +1,59 @@
+:root{--blue:#0868ed;--navy:#031a3a;--line:#bfd3eb}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--navy);background:#fff}
+a{text-decoration:none;color:inherit}
+
+.nav{height:94px;background:#fff;border-bottom:3px solid var(--blue);display:flex;align-items:center;padding:0 4%;gap:30px;position:sticky;top:0;z-index:10}
+.nav-spacer{flex:1}
+.nav nav{display:flex;gap:36px;margin-left:auto}
+.nav nav a{font-weight:900;font-size:15px}
+.nav nav a.active,.nav nav a:hover{color:var(--blue);border-bottom:3px solid var(--blue);padding-bottom:25px}
+.discord{border:2px solid var(--blue);padding:14px 20px;font-weight:900;margin-left:10px}
+
+.hero{min-height:635px;background:linear-gradient(90deg,rgba(2,20,48,.98),rgba(2,24,54,.8) 38%,rgba(2,24,54,.18)),url("mountain-hero.jpg") center/cover;display:flex;align-items:center;padding:70px 5%;color:#fff}
+.heroText{max-width:650px}
+.eyebrow{color:#1680ff;font-weight:900;font-size:17px}
+.hero h1{font-size:100px;line-height:.82;font-style:italic;margin:15px 0 25px;letter-spacing:-5px}
+.hero h1 b{color:var(--blue)}
+.hero p{font-size:21px;line-height:1.5;max-width:590px}
+.btn{display:inline-block;padding:17px 25px;font-weight:900;margin:10px 20px 0 0}
+.blue{background:var(--blue)}
+.outline{border:2px solid #1680ff;background:rgba(0,20,50,.25)}
+
+.features{width:90%;margin:-5px auto 0;background:#fff;border:1px solid var(--line);border-radius:15px;box-shadow:0 12px 35px #18365a22;display:grid;grid-template-columns:repeat(4,1fr);padding:25px;position:relative;z-index:3}
+.features article{display:flex;gap:18px;padding:15px 25px;border-right:1px solid var(--line);font-size:34px;color:var(--blue)}
+.features article:last-child{border:0}
+.features b{font-size:17px}
+.features p{font-size:14px;color:#172b43;margin:7px 0;line-height:1.5}
+
+.intro{text-align:center;padding:75px 20px;background:linear-gradient(#fff,#eef6ff)}
+h2{color:#0848b8;font-style:italic;font-size:34px}
+.intro p{line-height:1.7}
+
+.section{padding:65px 6%}
+.light{background:#f2f7fd}
+.table{overflow:auto;border:1px solid var(--line);border-radius:10px}
+table{width:100%;border-collapse:collapse;min-width:650px}
+th,td{padding:16px;text-align:left;border-bottom:1px solid #d6e2ef}
+th{background:#edf5fc;color:#53708f;font-size:12px}
+
+.games,.teamgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.game,.team,.rules div{padding:23px;background:#fff;border:1px solid var(--line);border-radius:10px}
+.game b{color:var(--blue)}
+.team .circle{width:52px;height:52px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:900}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.rules b{color:var(--blue);margin-right:14px}
+
+footer{background:var(--navy);color:#fff;padding:30px 6%;display:flex;align-items:center;gap:20px}
+footer img{width:70px;height:55px;object-fit:contain}
+
+@media(max-width:900px){
+.nav{height:auto;min-height:80px;padding:10px 18px}
+.nav nav{display:none}
+.discord{margin-left:auto}
+.hero{padding:60px 25px}
+.hero h1{font-size:65px}
+.features,.games,.teamgrid,.rules{grid-template-columns:1fr}
+.features article{border-right:0;border-bottom:1px solid var(--line)}
+}
