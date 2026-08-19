@@ -1,96 +1,49 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>XHL | Xtreme Hockey League</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="XHL — the home of competitive virtual hockey.">
+  <title>XHL | Xtreme Hockey League</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="XHL home"><img src="xhl-logo.svg" alt="XHL logo"><span>XHL</span></a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav><a href="#standings">Standings</a><a href="#schedule">Schedule</a><a href="#teams">Teams</a><a href="#bracket">Playoffs</a><a href="#news">News</a></nav>
+    <a class="discord-button compact" href="https://discord.gg/twbkBFqWP" target="_blank" rel="noopener">Join Discord ↗</a>
+  </header>
 
-<header class="nav">
-  <div class="nav-spacer"></div>
-  <nav>
-    <a class="active" href="#home">HOME</a>
-    <a href="#standings">STANDINGS</a>
-    <a href="#schedule">SCHEDULE</a>
-    <a href="#teams">TEAMS</a>
-    <a href="#stats">STATS</a>
-    <a href="#rules">RULES</a>
-  </nav>
-  <a class="discord" href="https://discord.gg/twbkBFqWP" target="_blank" rel="noopener noreferrer">JOIN DISCORD</a>
-</header>
+  <main id="home">
+    <section class="hero">
+      <img class="hero-mountains" src="mountain-hero.svg" alt="">
+      <div class="hero-content"><p class="eyebrow">EST. 2025 · ELITE VIRTUAL HOCKEY</p><h1>OWN THE<br><em>ICE.</em></h1><p class="hero-copy">The Xtreme Hockey League is where rivalries are made, legends are built, and every game matters.</p><div class="hero-actions"><a class="button primary" href="#schedule">View Schedule</a><a class="button ghost" href="https://discord.gg/twbkBFqWP" target="_blank" rel="noopener">Join the Discord</a></div></div>
+      <div class="countdown-card"><p class="eyebrow">XHL CUP FINALS</p><strong id="countdown-label">Loading…</strong><div class="countdown" id="countdown"></div><small>Countdown target is editable in script.js</small></div>
+    </section>
 
-<section id="home" class="hero">
-  <div class="heroText">
-    <div class="eyebrow">4V4 HOCKEY | BYOT LEAGUE</div>
-    <h1>PLAY<br><b>XTREME.</b></h1>
-    <p>Where competition meets community. Every game matters. Every team battles.</p>
-    <div>
-      <a class="btn blue" href="#standings">VIEW STANDINGS <span>▮▮▮</span></a>
-      <a class="btn outline" href="#schedule">VIEW SCHEDULE <span>▦</span></a>
-    </div>
-  </div>
-</section>
+    <section class="ticker"><span>LIVE XHL</span><div id="ticker-text">Loading league updates…</div><a href="#game-center">GAME CENTER →</a></section>
 
-<section class="features">
-  <article><div class="icon">♟</div><div><b>COMMUNITY</b><p>A league built by players,<br>for players.</p></div></article>
-  <article><div class="icon">🏆</div><div><b>COMPETITIVE</b><p>Every game matters.<br>Every team battles.</p></div></article>
-  <article><div class="icon">▦</div><div><b>WEEKLY GAMES</b><p>Structured schedule with<br>exciting matchups.</p></div></article>
-  <article><div class="icon">★</div><div><b>FAIR PLAY</b><p>Rules in place to keep the<br>game clean and fun.</p></div></article>
-</section>
+    <section class="section featured" id="schedule"><div class="section-heading"><div><p class="eyebrow">MARQUEE MATCHUP</p><h2>Game of the Night</h2></div><a href="#game-center">Open Game Center →</a></div><div id="game-of-night" class="game-night"></div></section>
 
-<section class="intro">
-  <h2>— &nbsp; WHAT IS XHL? &nbsp; —</h2>
-  <p>Xtreme Hockey League (XHL) is a 4-on-4 hockey league where competition meets community.<br>
-  Join, rep your team, and chase the XHL Cup.</p>
-</section>
+    <section class="section two-column"><div class="panel potw"><p class="eyebrow">PLAYER OF THE WEEK</p><div id="player-of-week"></div></div><div class="panel rankings"><div class="section-heading"><div><p class="eyebrow">WEEKLY REPORT</p><h2>Power Rankings</h2></div><span class="updated">Updated weekly</span></div><div id="power-rankings"></div></div></section>
 
-<section id="standings" class="section">
-  <h2>STANDINGS</h2>
-  <div class="table">
-    <table>
-      <thead><tr><th>#</th><th>TEAM</th><th>GP</th><th>W</th><th>L</th><th>OT</th><th>PTS</th></tr></thead>
-      <tbody id="standingsBody"></tbody>
-    </table>
-  </div>
-</section>
+    <section class="section" id="standings"><div class="section-heading"><div><p class="eyebrow">REGULAR SEASON</p><h2>Live Standings</h2></div><span class="live-dot">LIVE-STYLE</span></div><div class="table-wrap"><table><thead><tr><th>TEAM</th><th>GP</th><th>W</th><th>L</th><th>OTL</th><th>PTS</th><th>GF</th><th>GA</th><th>+/-</th></tr></thead><tbody id="standings-body"></tbody></table></div></section>
 
-<section id="schedule" class="section light">
-  <h2>UPCOMING GAMES</h2>
-  <div class="games" id="gamesGrid"></div>
-</section>
+    <section class="section" id="teams"><div class="section-heading"><div><p class="eyebrow">THE LEAGUE</p><h2>Team Headquarters</h2></div><p>Choose a crest to explore each club.</p></div><div id="teams-grid" class="teams-grid"></div><article id="team-detail" class="team-detail" aria-live="polite"></article></section>
 
-<section id="teams" class="section">
-  <h2>TEAMS</h2>
-  <div class="teamgrid" id="teamsGrid"></div>
-</section>
+    <section class="section" id="bracket"><div class="section-heading"><div><p class="eyebrow">CHASE THE CUP</p><h2>Playoff Bracket</h2></div><span class="updated">Select a matchup for details</span></div><div id="playoff-bracket" class="bracket"></div><div id="bracket-detail" class="bracket-detail">Select a series above to see its status.</div></section>
 
-<section id="stats" class="section light">
-  <h2>PLAYER STATS</h2>
-  <div class="table">
-    <table>
-      <thead><tr><th>#</th><th>PLAYER</th><th>TEAM</th><th>GP</th><th>G</th><th>A</th><th>PTS</th></tr></thead>
-      <tbody id="statsBody"></tbody>
-    </table>
-  </div>
-</section>
+    <section class="section game-center" id="game-center"><div class="section-heading"><div><p class="eyebrow">XHL GAME CENTER</p><h2>Scores, stats &amp; recaps</h2></div></div><div id="game-tabs" class="game-tabs"></div><div id="game-center-content"></div></section>
 
-<section id="rules" class="section">
-  <h2>RULES</h2>
-  <div class="rules">
-    <div><b>01</b>Respect players, teams and league staff.</div>
-    <div><b>02</b>All games are 4-on-4 and follow the XHL schedule.</div>
-    <div><b>03</b>Game days are Friday, Saturday and Sunday at 8:00, 8:30 and 9:00 EST.</div>
-    <div><b>04</b>Follow roster, scheduling and Discord procedures.</div>
-  </div>
-</section>
+    <section class="section two-column"><div id="news" class="panel news"><p class="eyebrow">FROM THE LEAGUE OFFICE</p><h2>Latest XHL News</h2><div id="news-list"></div></div><div class="panel vote"><p class="eyebrow">FAN VOTE</p><h2 id="vote-question">Player of the Week</h2><p>Votes are saved on this browser only. Connect a form service later for league-wide voting.</p><div id="vote-options" class="vote-options"></div><p id="vote-result" class="vote-result"></p></div></section>
 
-<footer>
-  <img src="xhl-logo.jpeg" alt="XHL">
-  <span>© 2026 XTREME HOCKEY LEAGUE</span>
-</footer>
-
-<script src="script.js"></script>
+    <section class="section hall" id="hall"><div class="section-heading"><div><p class="eyebrow">HONOR THE GREATS</p><h2>XHL Hall of Fame</h2></div></div><div id="hall-grid" class="hall-grid"></div></section>
+  </main>
+  <footer><img src="xhl-logo.svg" alt="XHL"><div><strong>Xtreme Hockey League</strong><p>Built for the game. Powered by the community.</p></div><a class="discord-button" href="https://discord.gg/twbkBFqWP" target="_blank" rel="noopener">Join Discord ↗</a></footer>
+  <script src="script.js"></script>
 </body>
 </html>
